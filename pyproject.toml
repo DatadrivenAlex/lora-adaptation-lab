@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lora-adaptation-lab"
+version = "0.1.0"
+description = "A reproducible NumPy lab for low-rank adaptation, merge parity, and parameter efficiency."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26"]
+
+[project.scripts]
+lora-adaptation-lab = "lora_adaptation_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[project.optional-dependencies]
+test = ["ruff>=0.6"]
